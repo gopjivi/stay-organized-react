@@ -1,0 +1,218 @@
+/* common styles */
+.topheader {
+  background-color: #89cff0;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.bgcolor {
+  background-color: #ddeefa;
+}
+
+.navbar {
+  padding: 0px;
+}
+
+/* footer styles goes here */
+.copyright-area {
+  position: sticky;
+  width: 100%;
+  color: black;
+  text-align: center;
+  padding: 10px 0px;
+  background-color: #89cff0;
+}
+
+.copyright-area p {
+  margin-bottom: 0px;
+  color: black;
+}
+
+/*table design*/
+.margintop {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+#tasktable {
+  display: none;
+  text-align: center;
+}
+
+#noresult {
+  display: none;
+  text-align: center;
+}
+
+.bi-green {
+  color: green;
+}
+
+.bi-red {
+  color: red;
+}
+
+.tablediv {
+  padding-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*button style*/
+
+.btn-blue {
+  background-color: #89cff0;
+}
+
+li > .dropdown {
+  position: relative;
+  z-index: 1000;
+  /* Ensure this value is higher than any potentially overlapping elements */
+}
+
+li > .dropdown-menu {
+  z-index: 1001;
+  /* Ensure this value is higher than the z-index of the .dropdown */
+}
+
+li > .dropdown-menu {
+  background-color: #f8f9fa;
+  z-index: 2000;
+  padding-left: 15px;
+}
+
+.fixmargin {
+  margin: auto;
+}
+
+.textleft {
+  text-align: left;
+}
+
+.textright {
+  text-align: right;
+}
+
+.centerdiv {
+  width: 500px;
+  background-color: #f8f9fa;
+  margin-top: 60px;
+}
+
+.divheader {
+  background-color: #89cff0;
+  height: 50px;
+}
+
+.divmarginbottom {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.lableclass {
+  padding-left: 15px;
+}
+
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+
+.h-custom {
+  height: calc(100% - 73px);
+}
+
+/*cards style*/
+.topmargin {
+  margin-top: 50px;
+}
+
+.stats-icon {
+  font-size: 35px;
+  text-align: center;
+  color: orange;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+/*side bar alignment*/
+
+.sidebarheight {
+  height: 90vh;
+  position: sticky;
+}
+
+.usertodorow {
+  height: 90vh;
+}
+
+/* Media Queries */
+
+@media (min-width: 768px) {
+  .navbar-toggler {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .carddiv {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
+  }
+}
+
+.offcanvas-start {
+  width: 250px;
+}
+.nav-item a:hover {
+  background-color: #89cff0;
+}
+
+.arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 4px 0 4px;
+  border-color: #000 transparent transparent transparent;
+  transition: transform 0.3s ease; /* Add transition for smooth rotation */
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}
+.arrowforcanvas {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 4px 0 4px;
+  border-color: #000 transparent transparent transparent;
+  transition: transform 0.3s ease; /* Add transition for smooth rotation */
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}
+.rotate-down {
+  transform: rotate(180deg);
+}
+.dropdown-toggle::after {
+  display: none;
+}
