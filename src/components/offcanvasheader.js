@@ -7,14 +7,10 @@ import {
 } from "react-router-dom";
 
 export default function offcanvasheader() {
-  function ViewitemCanvas() {
-    var arrow = document.querySelector(".arrowforcanvas");
-    arrow.classList.toggle("rotate-down");
-  }
   return (
     <div
       className="offcanvas offcanvas-start d-md-block bg-light"
-      tabindex="-1"
+      tabIndex="-1"
       id="sidebar"
       aria-labelledby="sidebarLabel"
       style={{ width: 250 }}
@@ -56,7 +52,7 @@ export default function offcanvasheader() {
               href="#"
               id="navbarDarkDropdownMenuLink"
               role="button"
-              onclick="ViewitemCanvas()"
+              // onclick="ViewitemCanvas()"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >

@@ -20,9 +20,9 @@ function App() {
     <div className="bgcolor">
       <Header></Header>
       <div className="container-fluid navbarheight">
-        <div class="row">
+        <div className="row">
           <Sidebar></Sidebar>
-          <div class="col-md-9">
+          <div className="col-md-9">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/newuser" element={<Newuser />} />
