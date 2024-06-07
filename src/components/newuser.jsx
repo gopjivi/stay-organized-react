@@ -15,7 +15,13 @@ export default function Newuser() {
   async function handleSubmit(e) {
     e.preventDefault();
     debugger;
-    if (validateUser()) {
+    const isvalidated = await validateUser();
+    // Promise.resolve(validateUser()).then((value) => {
+    //   console.log(value);
+    //   isvalidated = value;
+    // });
+    console.log(isvalidated);
+    if (isvalidated) {
       try {
         await createNewuser(user);
         alert("New User Created Successfully");
@@ -79,7 +85,7 @@ export default function Newuser() {
             type="text"
             onChange={(e) => setUser({ ...user, name: e.target.value })}
             className={
-              "form-control " + (errors.name ? css.borderred : css.borderblack)
+              "form-control " + (errors.name ? "borderred" : "borderblack")
             }
             value={user.name}
           ></input>
@@ -93,8 +99,7 @@ export default function Newuser() {
             type="text"
             onChange={(e) => setUser({ ...user, username: e.target.value })}
             className={
-              "form-control " +
-              (errors.username ? css.borderred : css.borderblack)
+              "form-control " + (errors.username ? "borderred" : "borderblack")
             }
             value={user.username}
           ></input>
@@ -110,8 +115,7 @@ export default function Newuser() {
             type="password"
             onChange={(e) => setUser({ ...user, password: e.target.value })}
             className={
-              "form-control " +
-              (errors.password ? css.borderred : css.borderblack)
+              "form-control " + (errors.password ? "borderred" : "borderblack")
             }
             value={user.password}
           ></input>
@@ -130,7 +134,7 @@ export default function Newuser() {
             }
             className={
               "form-control " +
-              (errors.confirmpassword ? css.borderred : css.borderblack)
+              (errors.confirmpassword ? "borderred" : "borderblack")
             }
             value={user.confirmpassword}
           ></input>

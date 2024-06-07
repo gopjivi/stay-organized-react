@@ -221,3 +221,10 @@ li > .dropdown-menu {
 header .navbar {
   padding-top: 0px;
 }
+
+.borderred {
+  border-color: red;
+}
+.borderblack {
+  border-color: #dee2e6;
+}
