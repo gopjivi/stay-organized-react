@@ -1,6 +1,3 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Header from "./components/header";
 import {
   BrowserRouter as Router,
   Routes,
@@ -8,33 +5,22 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-import Newuser from "./components/newuser";
+
 import Home from "./components/home";
+import Login from "./components/login";
+import Newuser from "./components/newuser";
 import Newtask from "./components/newtask";
 import Viewtask from "./components/viewtask";
-import Footer from "./components/footer";
-import Sidebar from "./components/sidebar";
 
 function App() {
   return (
-    <div className="bgcolor">
-      <Header></Header>
-      <div className="container-fluid navbarheight">
-        <div className="row">
-          <Sidebar></Sidebar>
-          <div className="col-md-9">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/newuser" element={<Newuser />} />
-              <Route path="/newtask" element={<Newtask />} />
-              <Route path="/viewtask" element={<Viewtask />} />
-            </Routes>
-          </div>
-        </div>
-      </div>
-
-      <Footer></Footer>
-    </div>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/newuser" element={<Newuser />} />
+      <Route path="/newtask" element={<Newtask />} />
+      <Route path="/viewtask" element={<Viewtask />} />
+    </Routes>
   );
 }
 

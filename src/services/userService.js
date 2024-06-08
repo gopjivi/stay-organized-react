@@ -20,3 +20,12 @@ export function checkUserName(name) {
     throw response;
   });
 }
+
+export function validateUserByName(name) {
+  return fetch(`http://localhost:8083/api/users/${name}`, {
+    method: "GET",
+    credentials: "same-origin",
+  }).then((res) => {
+    return res;
+  });
+}

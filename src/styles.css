@@ -34,16 +34,6 @@
   margin-bottom: 50px;
 }
 
-#tasktable {
-  display: none;
-  text-align: center;
-}
-
-#noresult {
-  display: none;
-  text-align: center;
-}
-
 .bi-green {
   color: green;
 }

@@ -32,7 +32,7 @@ export default function offcanvasheader() {
             <a
               className="nav-link active text-dark"
               id="canvashomelinkid"
-              href="/"
+              href="/home"
             >
               Home
             </a>

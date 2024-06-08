@@ -1,4 +1,7 @@
-export default function topheader() {
+import { useContext } from "react";
+
+export default function Topheader() {
+  const userName = JSON.parse(localStorage.getItem("username"));
   return (
     <div className="row topheader">
       <div className="col-md-2 my-auto">
@@ -9,8 +12,9 @@ export default function topheader() {
       <div className="col-md-3 my-auto">
         <ul className="nav justify-content-end">
           <li className="nav-item">
-            <a className="nav-link text-dark" href="login.html">
-              <span id="headername"></span> <i className="bi-person-fill"></i>
+            <a className="nav-link text-dark" href="/">
+              <span id="headername">Welcome {userName}</span>{" "}
+              <i className="bi-person-fill"></i>{" "}
             </a>
           </li>
         </ul>

@@ -14,7 +14,7 @@ export default function sidebar() {
           <div className="pt-3">
             <ul className="nav flex-column">
               <li className="nav-item">
-                <Link className="nav-link active text-dark" to="/">
+                <Link className="nav-link active text-dark" to="/home">
                   Home
                 </Link>
               </li>
