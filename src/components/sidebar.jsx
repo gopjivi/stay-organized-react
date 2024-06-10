@@ -51,7 +51,7 @@ export default function sidebar() {
                     <a
                       className="dropdown-item"
                       id="viewtaskid"
-                      href="/viewtask"
+                      href="/viewtasks"
                     >
                       View by User
                     </a>

@@ -76,7 +76,7 @@ export default function offcanvasheader() {
                 <a
                   className="dropdown-item"
                   id="canvasviewtaskid"
-                  href="/viewtask"
+                  href="/viewtasks"
                 >
                   View by User
                 </a>

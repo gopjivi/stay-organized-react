@@ -10,7 +10,7 @@ import Home from "./components/home";
 import Login from "./components/login";
 import Newuser from "./components/newuser";
 import Newtask from "./components/newtask";
-import Viewtask from "./components/viewtask";
+import Viewtask from "./components/viewtasks";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
       <Route path="/home" element={<Home />} />
       <Route path="/newuser" element={<Newuser />} />
       <Route path="/newtask" element={<Newtask />} />
-      <Route path="/viewtask" element={<Viewtask />} />
+      <Route path="/viewtasks" element={<Viewtask />} />
     </Routes>
   );
 }

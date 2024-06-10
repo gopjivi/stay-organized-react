@@ -38,7 +38,7 @@ export default function Newtask() {
     }
   }, [usersData]);
 
-  function validateUser() {
+  function validateTask() {
     const validationErrors = {};
 
     if (!todo.userid) {
@@ -70,7 +70,7 @@ export default function Newtask() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const isvalidated = validateUser();
+    const isvalidated = validateTask();
     console.log(isvalidated);
     if (isvalidated) {
       let task = addNewTask(todo);

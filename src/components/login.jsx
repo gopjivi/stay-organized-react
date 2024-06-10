@@ -34,6 +34,10 @@ export default function Login() {
       }
     }
 
+    if (!password.trim()) {
+      validationErrors.password = "Password is Required";
+    }
+
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
@@ -109,6 +113,7 @@ export default function Login() {
                   id="username"
                   value={username}
                   onChange={(e) => setUserName(e.target.value)}
+                  onBlur={(e) => SetPassword(e.target.value)}
                 />
                 <div>
                   {errors.username && (
@@ -120,11 +125,19 @@ export default function Login() {
                 <label className="form-label">Password</label>
                 <input
                   type="password"
-                  className="form-control"
+                  className={
+                    "form-control " +
+                    (errors.username ? "borderred" : "borderblack")
+                  }
                   id="password"
                   value={password}
                   onChange={(e) => SetPassword(e.target.value)}
                 />
+                <div>
+                  {errors.password && (
+                    <span className="text-danger">{errors.password}</span>
+                  )}
+                </div>
               </div>
 
               <div className="col-md-10 justify-content-between align-items-center">
