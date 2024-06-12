@@ -6,6 +6,7 @@ import { useFetch } from "../services/useFetch";
 import Header from "./header";
 import Sidebar from "./sidebar";
 import Footer from "./footer";
+import { useNavigate } from "react-router-dom";
 
 export default function Newtask() {
   const [todo, setTodo] = useState({
@@ -18,13 +19,24 @@ export default function Newtask() {
   const [categories, setCategories] = useState({});
   const [users, setUsers] = useState({});
   const [errors, setErrors] = useState({});
-  const minDate = new Date();
+  const [minDate, setMinDate] = useState("");
+  const navigate = useNavigate();
 
   const categoriesApiUrl = "http://localhost:8083/api/categories";
   const usersApiUrl = "http://localhost:8083/api/users";
 
   const [categoriesData] = useFetch(categoriesApiUrl);
   const [usersData] = useFetch(usersApiUrl);
+
+  useEffect(() => {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, "0"); // Months are zero-based
+    const dd = String(today.getDate()).padStart(2, "0");
+
+    const formattedDate = `${yyyy}-${mm}-${dd}`;
+    setMinDate(formattedDate);
+  }, []);
 
   useEffect(() => {
     if (categoriesData) {
@@ -83,6 +95,7 @@ export default function Newtask() {
           deadline: "",
           priority: "",
         });
+        navigate("/home");
       });
     }
   }

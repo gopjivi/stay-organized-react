@@ -3,15 +3,33 @@ import Modal from "react-bootstrap/Modal";
 import { updateTaskbyID } from "../services/taskService";
 import { getTaskByUser } from "../services/taskService";
 
-export default function EditTodoModal({ show, todo, handleClose, setTodos }) {
+export default function EditTodoModal({
+  show,
+  todo,
+  handleClose,
+  setTodos,
+  setTodoscopy,
+}) {
   const [todoedit, setTodoedit] = useState({});
   const [errors, setErrors] = useState({});
   const [selectedValue, setSelectedValue] = useState(false);
+  const [minDate, setMinDate] = useState("");
 
   useEffect(() => {
     setTodoedit(todo);
     setSelectedValue(todo.completed);
+    setErrors({});
   }, [todo]);
+
+  useEffect(() => {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, "0"); // Months are zero-based
+    const dd = String(today.getDate()).padStart(2, "0");
+
+    const formattedDate = `${yyyy}-${mm}-${dd}`;
+    setMinDate(formattedDate);
+  }, []);
 
   function validateTask() {
     const validationErrors = {};
@@ -49,6 +67,7 @@ export default function EditTodoModal({ show, todo, handleClose, setTodos }) {
         tasks.then((e) => {
           console.log(e);
           setTodos(e);
+          setTodoscopy(e);
         });
       });
     }
@@ -106,6 +125,7 @@ export default function EditTodoModal({ show, todo, handleClose, setTodos }) {
             <div className="col-md-8 ms-auto">
               <input
                 type="date"
+                min={minDate}
                 className={
                   "form-control " +
                   (errors.deadline ? "borderred" : "borderblack")

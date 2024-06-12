@@ -6,6 +6,7 @@ import { useFetch } from "../services/useFetch";
 import Header from "./header";
 import Sidebar from "./sidebar";
 import Footer from "./footer";
+import { useNavigate } from "react-router-dom";
 
 export default function Newuser() {
   const [user, setUser] = useState({
@@ -15,6 +16,7 @@ export default function Newuser() {
     confirmpassword: "",
   });
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -32,6 +34,7 @@ export default function Newuser() {
           password: "",
           confirmpassword: "",
         });
+        navigate("/home");
       } catch (e) {
         console.error("Error:", e);
       }

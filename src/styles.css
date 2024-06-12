@@ -53,6 +53,12 @@
 .btn-blue {
   background-color: #89cff0;
 }
+.btn-blue :hover {
+  background-color: #89cff0;
+}
+.btn:hover {
+  background-color: #89cff0;
+}
 
 li > .dropdown {
   position: relative;
@@ -229,4 +235,8 @@ header .navbar {
 
 .modal-content {
   z-index: 1050 !important;
+}
+.piechartdiv {
+  border: 1px solid black;
+  text-align: left;
 }
