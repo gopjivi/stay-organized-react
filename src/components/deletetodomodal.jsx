@@ -38,7 +38,10 @@ export default function DeleteTodoModal({
       <Modal.Body>
         <div className="container-fluid">
           <div className="row" style={{ marginBottom: 15 }}>
-            Are you sure you want to delete this {todo.description} task?
+            <p>
+              Are you sure you want to delete this{" "}
+              <b className="highlight">{todo.description} </b> task?
+            </p>
           </div>
         </div>
       </Modal.Body>

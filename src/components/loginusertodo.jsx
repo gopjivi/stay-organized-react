@@ -77,7 +77,7 @@ export default function LoginUserToDo({ userID }) {
   };
   return (
     <div className="row tablediv">
-      <div className="col-6 col-lg-3 col-md-6 carddiv">
+      <div className="col-6 col-lg-4 col-md-6 carddiv">
         <div className="card" style={{ marginBottom: 15 }}>
           <div className="card-body px-4 py-4-5">
             <div className="row">
@@ -87,7 +87,7 @@ export default function LoginUserToDo({ userID }) {
                 </div>
               </div>
               <div className="col-md-8 col-lg-12 col-xl-12 col-xxl-7 text-center">
-                <h6 className="font-semibold">Total No of Task</h6>
+                <h6 className="font-semibold">Total No of Tasks</h6>
                 <span id="taskid" className="font-extrabold mb-0">
                   {todosLength}
                 </span>
@@ -107,7 +107,7 @@ export default function LoginUserToDo({ userID }) {
                 </div>
               </div>
               <div className="col-md-8 col-lg-12 col-xl-12 col-xxl-7 text-center">
-                <h6 className="font-semibold">Completed</h6>
+                <h6 className="font-semibold">Completed Tasks</h6>
                 <span id="taskid" className="font-extrabold mb-0">
                   {completedLength}
                 </span>
@@ -127,7 +127,7 @@ export default function LoginUserToDo({ userID }) {
                 </div>
               </div>
               <div className="col-md-8 col-lg-12 col-xl-12 col-xxl-7 text-center">
-                <h6 className="font-semibold">Pending</h6>
+                <h6 className="font-semibold">Pending Tasks</h6>
                 <span id="taskid" className="font-extrabold mb-0">
                   {pendingLength}
                 </span>
@@ -136,7 +136,7 @@ export default function LoginUserToDo({ userID }) {
           </div>
         </div>
       </div>
-      <div className="col-6 col-lg-3 col-md-6 carddiv"></div>
+      <div className="col-6 col-lg-4 col-md-6 carddiv"></div>
 
       <div className="col-6 col-lg-4 col-md-6 carddiv piechartdiv">
         <PieChart data={data} options={options} />

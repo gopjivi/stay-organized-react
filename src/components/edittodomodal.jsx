@@ -61,7 +61,7 @@ export default function EditTodoModal({
       todoedit.completed = selectedValue;
       let task = updateTaskbyID(todoedit);
       task.then((e) => {
-        alert("Task Upadted Successfully");
+        alert("Task Updated Successfully");
         handleClose();
         let tasks = getTaskByUser(todoedit.userid);
         tasks.then((e) => {
@@ -181,6 +181,7 @@ export default function EditTodoModal({
                 onChange={() => handleRadioChange(true)}
               />
               <label htmlFor="option1">Yes</label>
+              {"    "}
               <input
                 type="radio"
                 id="option2"

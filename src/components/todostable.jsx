@@ -174,7 +174,7 @@ export default function Todostable({ userID }) {
         >
           <thead className="bg-light">
             <tr>
-              <td colspan="2">
+              <td colSpan="2">
                 {" "}
                 <div className="input-group">
                   <span className="input-group-text" id="basic-addon1">
@@ -192,7 +192,7 @@ export default function Todostable({ userID }) {
                 </div>
               </td>
               <td></td>
-              <td colspan="4" style={{ textAlign: "right" }}>
+              <td colSpan="4" style={{ textAlign: "right" }}>
                 Filter By :
                 <select
                   id="category"
@@ -298,7 +298,7 @@ export default function Todostable({ userID }) {
               ))
             ) : (
               <tr>
-                <td colspan="7">
+                <td colSpan="7">
                   <div
                     id="noresult"
                     className="text-center bg-light text-danger"

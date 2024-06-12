@@ -52,7 +52,7 @@ export default function Login() {
     let isvalidated = await validateUser();
     console.log(isvalidated);
     if (isvalidated) {
-      alert("user login successfully done");
+      alert("User login successfully done");
 
       navigate("/home");
     }
@@ -127,7 +127,7 @@ export default function Login() {
                   type="password"
                   className={
                     "form-control " +
-                    (errors.username ? "borderred" : "borderblack")
+                    (errors.password ? "borderred" : "borderblack")
                   }
                   id="password"
                   value={password}

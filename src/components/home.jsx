@@ -17,7 +17,7 @@ export default function home() {
           <div className="col-md-9">
             <Cards></Cards>
             <div className="row tablediv topmargin">
-              <div className="col-md-12 divmarginbottom">
+              <div className="col-md-12 divmarginbottom borderstyle">
                 <h5>My Tasks</h5>
               </div>
             </div>

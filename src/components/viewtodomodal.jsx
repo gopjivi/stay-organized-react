@@ -17,7 +17,7 @@ export default function ViewTodoModal({
       animation={true}
     >
       <Modal.Header className="modal-header divheader" closeButton>
-        <Modal.Title> User Task Detail</Modal.Title>
+        <Modal.Title> User Task Details</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <div className="container-fluid">

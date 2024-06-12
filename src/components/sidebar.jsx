@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -6,7 +7,12 @@ import {
   Link,
 } from "react-router-dom";
 
-export default function sidebar() {
+export default function Sidebar() {
+  const [arrow, setArrow] = useState(false);
+  function ChangeArrow() {
+    setArrow(!arrow);
+  }
+
   return (
     <div className="col-md-3 col-lg-2 d-none d-md-block sidebar bg-light">
       <nav id="sidebarMenu">
@@ -33,8 +39,12 @@ export default function sidebar() {
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
+                  onClick={ChangeArrow}
                 >
-                  Tasks &nbsp;<span className="arrow"></span>
+                  Tasks &nbsp;
+                  <span
+                    className={"arrow " + (arrow ? "rotate-down" : "")}
+                  ></span>
                 </a>
                 <ul
                   className="dropdown-menu dropdown-menu-light"

@@ -56,7 +56,15 @@ export default function Viewtasks() {
                     ))}
                 </select>
               </div>
-
+              {/* <div className="rightalign">
+                <button
+                  type="button"
+                  className="btn btn-blue"
+                  onClick={AddTaskForUser}
+                >
+                  <i class="bi bi-plus-lg"></i> Add New Task
+                </button>
+              </div> */}
               <Todostable userID={userid}></Todostable>
             </div>
           </div>

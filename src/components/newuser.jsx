@@ -149,7 +149,7 @@ export default function Newuser() {
                   </div>
                 </div>
                 <div className="col-md-8">
-                  <label className="form-label">confirmpassword*:</label>
+                  <label className="form-label">Confirmpassword*:</label>
                   <input
                     type="password"
                     onChange={(e) =>

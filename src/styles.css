@@ -58,6 +58,7 @@
 }
 .btn:hover {
   background-color: #89cff0;
+  transform: scale(1.05);
 }
 
 li > .dropdown {
@@ -239,4 +240,19 @@ header .navbar {
 .piechartdiv {
   border: 1px solid black;
   text-align: left;
+}
+.borderstyle {
+  border: 1px solid;
+  background-color: #89cff0;
+  text-align: center;
+}
+.rightalign {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #ff6347;
+  display: inline;
 }
