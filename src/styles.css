@@ -256,3 +256,9 @@ header .navbar {
   color: #ff6347;
   display: inline;
 }
+.required {
+  color: #ff6347;
+}
+.clicked {
+  border: 2px solid black;
+}

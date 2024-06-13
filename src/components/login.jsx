@@ -30,7 +30,10 @@ export default function Login() {
           localStorage.setItem("username", JSON.stringify(username));
         });
       } else {
-        validationErrors.username = "Enter a valid UserName";
+        // validationErrors.username = "Invalid credentials";
+        //validationErrors.password = "Invalid credentials";
+        alert("Invalid credentials");
+        return false;
       }
     }
 

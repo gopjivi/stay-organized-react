@@ -66,7 +66,7 @@ export default function Newuser() {
     }
 
     if (!user.confirmpassword.trim()) {
-      validationErrors.confirmpassword = "ConfirmPassword is Required";
+      validationErrors.confirmpassword = "Confirm Password is Required";
     } else if (user.confirmpassword.trim() !== user.password.trim()) {
       validationErrors.confirmpassword = "Confirm Password not matched";
     }
@@ -94,7 +94,9 @@ export default function Newuser() {
               </div>
               <form className="row g-3 needs-validation tablediv">
                 <div className="col-md-8">
-                  <label className="form-label">Name*:</label>
+                  <label className="form-label">
+                    <span className="required">*</span>Name:
+                  </label>
                   <input
                     type="text"
                     onChange={(e) => setUser({ ...user, name: e.target.value })}
@@ -111,7 +113,9 @@ export default function Newuser() {
                   </div>
                 </div>
                 <div className="col-md-8">
-                  <label className="form-label">UserName*:</label>
+                  <label className="form-label">
+                    <span className="required">*</span>UserName:
+                  </label>
                   <input
                     type="text"
                     onChange={(e) =>
@@ -130,7 +134,9 @@ export default function Newuser() {
                   </div>
                 </div>
                 <div className="col-md-8">
-                  <label className="form-label">Password*:</label>
+                  <label className="form-label">
+                    <span className="required">*</span>Password:
+                  </label>
                   <input
                     type="password"
                     onChange={(e) =>
@@ -149,7 +155,9 @@ export default function Newuser() {
                   </div>
                 </div>
                 <div className="col-md-8">
-                  <label className="form-label">Confirmpassword*:</label>
+                  <label className="form-label">
+                    <span className="required">*</span>Confirm Password:
+                  </label>
                   <input
                     type="password"
                     onChange={(e) =>

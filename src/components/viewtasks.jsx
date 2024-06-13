@@ -9,6 +9,9 @@ import Todostable from "./todostable";
 export default function Viewtasks() {
   const [users, setUsers] = useState([]);
   const [userid, setuserID] = useState("");
+  const [allbutton, setAllButton] = useState(false);
+  const [completedbutton, setCompletedButton] = useState(false);
+  const [pendingbutton, setPendingButton] = useState(false);
 
   const usersApiUrl = "http://localhost:8083/api/users";
 
@@ -29,6 +32,9 @@ export default function Viewtasks() {
     if (userid) {
       setuserID(userid);
       console.log("userid from state", userid);
+      setAllButton(false);
+      setCompletedButton(false);
+      setPendingButton(false);
     }
   }, [userid]);
 
@@ -41,7 +47,7 @@ export default function Viewtasks() {
           <div className="col-md-9">
             <div className="row margintop text-center">
               <div className="text-center" style={{ marginBottom: 30 }}>
-                Please Select User Here :
+                Please Select User Here{" "}
                 <select
                   id="userlList"
                   className="dropdown-toggle"
@@ -65,7 +71,15 @@ export default function Viewtasks() {
                   <i class="bi bi-plus-lg"></i> Add New Task
                 </button>
               </div> */}
-              <Todostable userID={userid}></Todostable>
+              <Todostable
+                userID={userid}
+                setAllButton={setAllButton}
+                setCompletedButton={setCompletedButton}
+                setPendingButton={setPendingButton}
+                allbutton={allbutton}
+                completedbutton={completedbutton}
+                pendingbutton={pendingbutton}
+              ></Todostable>
             </div>
           </div>
         </div>

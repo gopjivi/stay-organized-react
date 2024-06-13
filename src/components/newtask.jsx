@@ -115,7 +115,9 @@ export default function Newtask() {
               </div>
               <form className="row g-3 needs-validation tablediv">
                 <div className="col-md-8">
-                  <label className="form-label">User*</label>
+                  <label className="form-label">
+                    <span className="required">*</span>User:
+                  </label>
                   <select
                     id="userid"
                     className={
@@ -142,7 +144,9 @@ export default function Newtask() {
                   </div>
                 </div>
                 <div className="col-md-8">
-                  <label className="form-label">Category*</label>
+                  <label className="form-label">
+                    <span className="required">*</span>Category:
+                  </label>
                   <select
                     id="category"
                     className={
@@ -169,7 +173,9 @@ export default function Newtask() {
                   </div>
                 </div>
                 <div className="col-md-8">
-                  <label className="form-label">Description*</label>
+                  <label className="form-label">
+                    <span className="required">*</span>Description:
+                  </label>
                   <textarea
                     className={
                       "form-control " +
@@ -189,7 +195,9 @@ export default function Newtask() {
                   </div>
                 </div>
                 <div className="col-md-8">
-                  <label className="form-label">DeadLine*</label>
+                  <label className="form-label">
+                    <span className="required">*</span>DeadLine:
+                  </label>
                   <input
                     type="date"
                     min={minDate}
@@ -210,7 +218,9 @@ export default function Newtask() {
                   </div>
                 </div>
                 <div className="col-md-8">
-                  <label className="form-label">Priority*</label>
+                  <label className="form-label">
+                    <span className="required">*</span>Priority:
+                  </label>
                   <select
                     className={
                       "form-select " +

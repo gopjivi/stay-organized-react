@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Gettaskbyid, getTaskByUser } from "../services/taskService";
 import Modal from "react-bootstrap/Modal";
 import ViewTodoModal from "./viewtodomodal";
@@ -7,7 +7,15 @@ import EditTodoModal from "./edittodomodal";
 import { useFetch } from "../services/useFetch";
 import DeleteTodoModal from "./deletetodomodal";
 
-export default function Todostable({ userID }) {
+export default function Todostable({
+  userID,
+  setAllButton,
+  setCompletedButton,
+  setPendingButton,
+  allbutton,
+  completedbutton,
+  pendingbutton,
+}) {
   const [todos, setTodos] = useState([]);
   const [todo, setTodo] = useState({});
   const [show, setShow] = useState(false);
@@ -62,6 +70,10 @@ export default function Todostable({ userID }) {
   }
   // Function Called on click of the Button for open model
   function viewTODODetails(id) {
+    setAllButton(false);
+    setCompletedButton(false);
+    setPendingButton(false);
+
     let task = Gettaskbyid(id);
     task.then((e) => {
       setTodo(e);
@@ -69,6 +81,10 @@ export default function Todostable({ userID }) {
     setShow(true);
   }
   function editTODODetails(id) {
+    setAllButton(false);
+    setCompletedButton(false);
+    setPendingButton(false);
+
     let task = Gettaskbyid(id);
     task.then((e) => {
       console.log(e);
@@ -77,6 +93,9 @@ export default function Todostable({ userID }) {
     setShowForEdit(true);
   }
   function deleteTODODetails(id, userid) {
+    setAllButton(false);
+    setCompletedButton(false);
+    setPendingButton(false);
     let task = Gettaskbyid(id);
     task.then((e) => {
       console.log(e);
@@ -92,8 +111,12 @@ export default function Todostable({ userID }) {
     setShowForDelete(false);
   }
   function searchByDescription(e) {
+    setAllButton(false);
+    setCompletedButton(false);
+    setPendingButton(false);
+    setFilterforcategory("");
     setFilterfordescription(e.target.value);
-    let [filteredTodos] = [todos];
+    let [filteredTodos] = [todoscopy];
     let input = e.target.value;
     console.log(filteredTodos);
     if (input.length > 0) {
@@ -108,6 +131,10 @@ export default function Todostable({ userID }) {
     setTodosfordescription(filteredTodos);
   }
   function getTaskByCategory(e) {
+    setAllButton(false);
+    setCompletedButton(false);
+    setPendingButton(false);
+    setFilterfordescription("");
     let category = e.target.value;
     setFilterforcategory(category);
     let [filteredTodos] = [todos];
@@ -124,20 +151,34 @@ export default function Todostable({ userID }) {
     setTodosforcategory(filteredTodos);
   }
   function getCompletedTask() {
+    setAllButton(false);
+    setCompletedButton(true);
+    setPendingButton(false);
+    setFilterforcategory("");
+    setFilterfordescription("");
     let [filteredTodos] = [todos];
 
     filteredTodos = todoscopy.filter((todo) => todo.completed === true);
     setTodos(filteredTodos);
   }
   function getInCompletedTask() {
+    setAllButton(false);
+    setCompletedButton(false);
+    setPendingButton(true);
+    setFilterforcategory("");
+    setFilterfordescription("");
     let [filteredTodos] = [todos];
 
     filteredTodos = todoscopy.filter((todo) => todo.completed === false);
     setTodos(filteredTodos);
   }
   function getAllTask() {
+    setAllButton(true);
+    setCompletedButton(false);
+    setPendingButton(false);
     setTodos(todoscopy);
     setFilterforcategory("");
+    setFilterfordescription("");
   }
 
   function sortByPriority() {
@@ -193,7 +234,7 @@ export default function Todostable({ userID }) {
               </td>
               <td></td>
               <td colSpan="4" style={{ textAlign: "right" }}>
-                Filter By :
+                Filter By
                 <select
                   id="category"
                   className="dropdown"
@@ -211,7 +252,9 @@ export default function Todostable({ userID }) {
                 </select>
                 <button
                   type="button"
-                  className="btn btn-blue"
+                  className={
+                    completedbutton ? "btn btn-blue clicked" : "btn btn-blue"
+                  }
                   style={{ marginRight: 10 }}
                   onClick={getCompletedTask}
                 >
@@ -219,7 +262,9 @@ export default function Todostable({ userID }) {
                 </button>
                 <button
                   type="button"
-                  className="btn btn-blue"
+                  className={
+                    pendingbutton ? "btn btn-blue clicked" : "btn btn-blue"
+                  }
                   style={{ marginRight: 10 }}
                   onClick={getInCompletedTask}
                 >
@@ -227,7 +272,9 @@ export default function Todostable({ userID }) {
                 </button>
                 <button
                   type="button"
-                  className="btn btn-blue"
+                  className={
+                    allbutton ? "btn btn-blue clicked" : "btn btn-blue"
+                  }
                   onClick={getAllTask}
                 >
                   All
